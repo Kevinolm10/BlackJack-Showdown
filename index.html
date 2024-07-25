@@ -2,9 +2,16 @@
 <html lang="en">
 
 <head>
+    <!--Meta Tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--Meta tags for search engines-->
+    <meta name="description" content="playing cards, cards, card games, blackjack, poker, fun card games">
+    <meta name="keywords" content="cards, joker, blackjack, ace of spades, poker">
+    <meta name="author" content="Kevin Ölmheden">
+    <title>BlackJack Showdown</title>
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -14,15 +21,15 @@
 
     <main>
         <h2>Points to the Dealer: <span id="dealer-points"></span></h2>
-        <div id="d-cards">
-            <img id="hidden" src="assets/images/red_joker.png" alt="red_joker">
+        <div class="dealers-cards">
+            <img class="hidden" src="assets/images/r-j.png" alt="Joker">
         </div>
         <h2>Your points: <span id="your-points"></span></h2>
-        <div id="y-cards"></div>
+        <div class="players-cards"></div>
 
         <br>
-        <button id="go">Go</button>
-        <button id="stay">Stay</button>
+        <button class="go">Go</button>
+        <button class="stay">Stay</button>
         <p id="results"></p>
     </main>
 
@@ -30,7 +37,7 @@
         <p>A fun way to experience card games!</p>
     </footer>
 
-    <script src="assets/blackjack.js"></script>
+    <script src="blackjack.js"></script>
 </body>
 
 </html>
