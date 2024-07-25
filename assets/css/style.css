@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styling for body element */
+body {
+    text-align: center;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Styling for Header */
+header {
+    background: red;
+    padding: 1rem;
+}
+
+#d-cards img {
+    height: 160px;
+    width: 120px;
+    margin: 3px;
+}
+
+#y-cards img {
+    height: 160px;
+    width: 120px;
+    margin: 3px;
+}
+
+#go {
+    height: 2rem;
+    width: 4rem;
+}
+
+#stay {
+    height: 2rem;
+    width: 4rem;
+}
+
+footer {
+    background: red;
+    padding: 1rem;
+}
