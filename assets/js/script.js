@@ -25,6 +25,7 @@ function buildCardDeck() {
     //console.log(cardDeck)
 }
 
+// Shuffle card function
 function mixCards() {
     for (let i = 0; i < cardDeck.length; i++) {
         let f = Math.floor(Math.random() * cardDeck.length); // Chooses random card from 1-52
@@ -35,10 +36,12 @@ function mixCards() {
     console.log(cardDeck);
 }
 
+// Function to get the img source
 function getImageSrc(card) {
     return `/workspace/BlackJack-Showdown/assets/images${values} + "-" + ${types} + .png`;
 }
 
+//function for when the game starts
 function startGame() {
     flip = cardDeck.pop();
     dealerPoint += getAmount(flip);
@@ -56,7 +59,7 @@ function startGame() {
             dealerAces -= 1;
         }
 
-
+        // for dealer cards to show
         let cardImage = document.createElement("img");
         cardImage.src = getImageSrc(flip);
 
@@ -64,26 +67,38 @@ function startGame() {
         if (dealerCardsContainer.length > 0) {
             dealerCardsContainer[0].appendChild(cardImage);
         }
+        console.log(dealerPoint);
     }
+    //for player cards to show up
+    for (let i = 0; i < 2; i++) {
+        let cardImage = document.createElement("img");
+        cardImage.src = getImageSrc(flip);
 
-}
-
-function getAmount(images) {
-    let data = images.split("-");
-    let amount = data[0];
-
-    if (isNaN(amount)) {
-        if (amount === "a") {
-            return 11;
+        let playerCardsContainer = document.getElementsByClassName("players-cards");
+        if (playerCardsContainer.length > 0) {
+            playerCardsContainer[0].appendChild(cardImage);
         }
-        return 10;
+        console.log(dealerPoint);
     }
-    return parseInt(amount);
-}
 
-function scanAce(images) {
-    if (images[0] === "a") {
-        return 1;
+    function getAmount(images) {
+        let data = images.split("-");
+        let amount = data[0];
+
+        if (isNaN(amount)) {
+            if (amount === "a") {
+                return 11;
+            }
+            return 10;
+        }
+        return parseInt(amount);
     }
-    return 0;
+
+    function scanAce(images) {
+        if (images[0] === "a") {
+            return 1;
+        }
+        return 0;
+    }
+
 }
