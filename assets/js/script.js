@@ -4,6 +4,8 @@ let dealerAces = 0; // dealer and your ace count
 let playerAces = 0;
 let flip; // hidden card in the beginning
 let cardDeck = [];
+const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "j", "q", "k"];
+const types = ["c", "d", "h", "s"];
 
 let goBtn = true; //allows to go if you are under 21 points
 
@@ -14,9 +16,6 @@ window.onload = function () {
 }
 
 function buildCardDeck() {
-    const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "j", "q", "k"];
-    const types = ["c", "d", "h", "s"];
-
     for (let i = 0; i < types.length; i++) { // Pushes an array of the possible cards to the function
         for (let f = 0; f < values.length; f++) {
             cardDeck.push(values[f] + "-" + types[i]);
@@ -36,9 +35,8 @@ function mixCards() {
     console.log(cardDeck);
 }
 
-function getImagesSrc(images) {
-    let image = "../images/"; // Update this to the correct path of your card images
-    return `${image}${images}.png`;
+function getImageSrc(card) {
+    return `/workspace/BlackJack-Showdown/assets/images${values} + "-" + ${types} + .png`;
 }
 
 function startGame() {
@@ -46,7 +44,7 @@ function startGame() {
     dealerPoint += getAmount(flip);
     dealerAces += scanAce(flip);
     console.log(flip);
-    //console.log(cardDeck);
+
     while (dealerPoint < 17) {
         flip = cardDeck.pop();
         dealerPoint += getAmount(flip);
@@ -60,8 +58,12 @@ function startGame() {
 
 
         let cardImage = document.createElement("img");
-        image.src = getImageSrc(flip);
-        document.getElementById("dealer-cards").appendChild(image);
+        cardImage.src = getImageSrc(flip);
+
+        let dealerCardsContainer = document.getElementsByClassName("dealers-cards");
+        if (dealerCardsContainer.length > 0) {
+            dealerCardsContainer[0].appendChild(cardImage);
+        }
     }
 
 }
