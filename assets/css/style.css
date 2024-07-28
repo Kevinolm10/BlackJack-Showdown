@@ -26,6 +26,10 @@ header .question {
     margin-top: 1rem;
 }
 
+main h2 {
+    padding: 1rem;
+}
+
 .dealers-cards img {
     height: 160px;
     width: 120px;
@@ -51,6 +55,7 @@ header .question {
 .startover {
     height: 2rem;
     width: 4rem;
+    margin-top: 2rem;
 }
 
 footer {
