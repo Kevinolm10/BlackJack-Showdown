@@ -8,9 +8,6 @@ let cardDeck;
 let goBtn = true; //allows to go if you are under 21 points
 
 
-
-
-
 window.onload = function () {
     buildCardDeck();
     mixCards();
@@ -73,6 +70,7 @@ function startGame() {
     document.getElementsByClassName("stay")[0].addEventListener("click", stay);
 }
 
+// go function to keep getting cards when pressing the go btn
 function go() {
     if (!goBtn) {
         return;
@@ -126,6 +124,7 @@ function getAmount(image) {
     return parseInt(amount);
 }
 
+// Checks for ace and returns 0 or 1
 function scanAce(image) {
     if (image[0] === "a") {
         return 1;
@@ -140,7 +139,7 @@ function smallAce(playerPoint, playerAces) {
     }
     return playerPoint;
 }
-
+// function to start over the game
 function playAgain() {
     document.querySelector('.startover').addEventListener('click', function () {
         window.location.reload();
