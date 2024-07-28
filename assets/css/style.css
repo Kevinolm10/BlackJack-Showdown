@@ -20,6 +20,11 @@ header {
     padding: 1rem;
 }
 
+header .question {
+    height: 20px;
+    width: 20px;
+}
+
 .dealers-cards img {
     height: 160px;
     width: 120px;
@@ -38,6 +43,11 @@ header {
 }
 
 .stay {
+    height: 2rem;
+    width: 4rem;
+}
+
+.startover {
     height: 2rem;
     width: 4rem;
 }
