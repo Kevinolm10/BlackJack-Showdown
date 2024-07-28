@@ -87,6 +87,25 @@ function go() {
 function stay() {
     dealerPoint = smallAce(dealerPoint, dealerAces)
     playerPoint = smallAce(playerPoint, playerAces)
+
+    goBtn = false;
+    document.getElementsByClassName("hidden").src = "./images/" + hidden + ".png";
+
+    let message = "";
+    if (playerPoint > 21) {
+        message = "The dealer won!";
+    } else if (dealerPoint > 21) {
+        message = "You outplayed the dealer!"
+    } else if (playerPoint === dealerPoint) {
+        message = "It is a draw!"
+    } else if (playerPoint > dealerPoint) {
+        message = "You outplayed the dealer!"
+    } else if (playerPoint < dealerPoint) {
+        message = "The dealer won!"
+    }
+    document.getElementsByClassName("dealer-points").innertext = dealerPoint;
+    document.getElementsByClassName("player-points").innertext = playerPoint;
+    document.getElementsByClassName("results").innertext = message;
 }
 
 function getAmount(image) {
