@@ -4,7 +4,7 @@ let dealerAces = 0; // dealer and your ace count
 let playerAces = 0;
 let flip; // hidden card in the beginning
 let cardDeck = [];
-const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "A", "j", "q", "k"];
+const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "a", "j", "q", "k"];
 const types = ["c", "d", "h", "s"];
 
 
@@ -51,6 +51,7 @@ function startGame() {
         dealerAces += scanAce(image);
         document.getElementsByClassName("dealers-cards")[0].append(imageImg);
     }
+
     console.log(dealerPoint);
 
     for (let i = 0; i < 2; i++) {
@@ -64,40 +65,54 @@ function startGame() {
 
     console.log(playerPoint);
     document.getElementsByClassName("go")[0].addEventListener("click", go);
+    document.getElementsByClassName("stay")[0].addEventListener("click", stay);
+}
 
-    function go() {
-        if (!goBtn) {
-            return;
-        }
-        let imageImg = document.createElement("img");
-        let image = cardDeck.pop();
-        imageImg.src = "./images/" + image + ".png";
-        playerPoint += getAmount(image);
-        playerAces += scanAce(image);
-        document.getElementsByClassName("players-cards")[0].append(imageImg);
-
-        if (smallAce(playerPoint, playerAces) > 21) {
-            goBtn = false;
-        }
+function go() {
+    if (!goBtn) {
+        return;
     }
+    let imageImg = document.createElement("img");
+    let image = cardDeck.pop();
+    imageImg.src = "./images/" + image + ".png";
+    playerPoint += getAmount(image);
+    playerAces += scanAce(image);
+    document.getElementsByClassName("players-cards")[0].append(imageImg);
 
-    function getAmount(image) {
-        let data = image.split("-");
-        let amount = data[0];
-
-        if (isNaN(amount)) {
-            if (amount === "a") {
-                return 11;
-            }
-            return 10;
-        }
-        return parseInt(amount);
+    if (smallAce(playerPoint, playerAces) > 21) {
+        goBtn = false;
     }
+}
 
-    function scanAce(image) {
-        if (image[0] === "a") {
-            return 1;
+function stay() {
+    dealerPoint = smallAce(dealerPoint, dealerAces)
+    playerPoint = smallAce(playerPoint, playerAces)
+}
+
+function getAmount(image) {
+    let data = image.split("-");
+    let amount = data[0];
+
+    if (isNaN(amount)) {
+        if (amount === "a") {
+            return 11;
         }
-        return 0;
+        return 10;
     }
+    return parseInt(amount);
+}
+
+function scanAce(image) {
+    if (image[0] === "a") {
+        return 1;
+    }
+    return 0;
+}
+
+function smallAce(playerPoint, playerAces) {
+    while (playerPoint > 21 && playerAces > 0) {
+        playerPoint += 10;
+        playerAces -= 1;
+    }
+    return playerPoint;
 }
