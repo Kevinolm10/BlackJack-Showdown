@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* Styling for Header */
@@ -23,6 +23,7 @@ header {
 header .question {
     height: 20px;
     width: 20px;
+    margin-top: 1rem;
 }
 
 .dealers-cards img {
