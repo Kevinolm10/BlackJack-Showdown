@@ -1,131 +1,243 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# *Welcome to BlackJack Showdown *
 
-Welcome Kevin Ölmheden,
+This is a website dedicated to making people experience the beautiful game of Blackjack!
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Our website can be accessed through this [link](https://kevinolm10.github.io/Fitness-zone/)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+---
+## User Stories
 
-`python3 -m http.server`
+### First time Visitor:
 
-A blue button should appear to click: _Make Public_,
+* Being a Visitor for the first time, the website is supposed to have a clear goal for the user.
+* Being a Visitor for the first time, the user should be able to clearly navigate the page through its responsiveness.
+* Being a Visitor for the first time, I want the user to be able to play the game i have created and to have fun without bugs in a well built enviornment.
 
-Another blue button should appear to click: _Open Browser_.
+### Returning Visitor:
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+* Being a Returning Visitor, I want the user to be able to go back to the 3 core videos to learn.
+* Being a Returning Visitor, i want the user to sign up to the form when they feel like they have mastered the 3 movements and want more.
 
-A blue button should appear to click: _Make Public_,
+### Frequent Visitor:
 
-Another blue button should appear to click: _Open Browser_.
+* Being a Frequent User, the site is supposed to make the user feel like they are getting somewhere with learning the movements.
+* Being a Frequent User, the site is supposed to finally make the user sign up and start the real program.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Features:
 
-To log into the Heroku toolbelt CLI:
+### The navigation bar
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Nav
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+   - All the three pages includes our logo at the top left.
+   - An interactive navbar that makes it easy for the user to go to the section they want.
+   - It includes background color of white when hovered over for the user to actively see where they are.
+   - Included in the nav bar is the following:
+   * HOME - Directs the user to the homepage where they can read the purpose of the website.
+   * VIDEOS - Directs the user to the video page where they can watch and read about 3 core movements.
+   * SIGN UP - Directs the user to the sign up page where they can evolve their fitness journey with the program.
 
-### Connecting your Mongo database
+   - Nav is responsive:
+   * Nav is in column formation when in mobile format and levels out to a row when in tablet, laptop or desktop format.
+   * Nav is changing background-color when hovered over.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**June 18, 2024,** Add Mongo back into template
-
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![Nav](documentation/nav.png)
 
 ---
 
-Happy coding!
++ ### Landing/Home page
+
+* Introduces user to the purpose of the website and company.
+* Introduces user to one of our coaches and his acomplishments.
+* Helps user know where they can find other useful information through hyperlinks.
+
+![Home Page](documentation/chrome.png)
+
+---
+
++ #### Hero section
+
+ - This section introduces the user to a dark background of a gym and orange faded text boxes covering the image. The text boxes contains the purpose of the website.
+
+ - Inside the text there is hyperlinks.
+
+ * Hyperlinks leads to all useful information
+
+ ![Hero](documentation/chrome.png)
+
+---
+
+ + #### The Footer
+
+- The footer is simple, with a background of orange and just social media links for the user to follow us on social media.
+
+![footer](documentation/footer.png)
+
+---
+
++ ### Videos Page
+
+- This section contains 3 videos of core excersises that everyone should do to keep themselves fit.
+
+- The user can actively play and rewatch the videos both during and after workout to learn the movements. 
+
+- Each video has a brief description that helps the user understand what they are watching.
+
+- The videos page is responsive in a way that it responds to screen size and width to fit all videos in a good way.
+
+![videos](documentation/videos.png)
+
+
+---
+
++ #### Sign Up Page
+
+- The sign up section is straight forward and simple as it is just a background with a form covering it.
+
+- The forms contains an h2 element, 3 text boxes and 3 radio buttons, in a column formation.
+
+- Under the 3 radio buttons is a submit button that is colored black with white text.
+
+- The submit button is responsive in a way that when hovered over, it changes background color to black and text color to white.
+
+![Sign up](documentation/signup.png)
+
+---
+
++ ### Response Page
+
+- The response page only appears visible when the submit button is pressed with all information required is written. 
+
+- The page contains a thank you message as well as information regarding what they signed up for.
+
+- A call to action message appears bellow telling the user to return to the videos page to learn more.
+
+![Response Page](documentation/response.png)
+
+---
+
+## Technologies Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) is used to create the foundation of the website.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - Was used to style and place the elements of the website.
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - Flexbox is used to place and rearrange the elements on the website.
+- [Balsamiq](https://balsamiq.com/) The wireframes was created in balsamiq.
+- [Gitpod](https://gitpod.com/) Gitpod was used as the tool to write code.
+- [GitHub](https://github.com/) was used to host the code of the website.
+
+---
+
+## Design
+
+### Colors Used
+
+- Black color used as main color for text on the website to make it easy to read.
+
+-Darker orange color used for header, footer and all text background. This was used to get an industrial and gym feeling.
+
+- White color was used as background color for hover effects to make the buttons pop out more.
+
+
+### Font types Used
+
+Lägg till main font
+![Main Font] ()
+
+- Open-sans was used as the font throughout the website as i thought it gave clearity when reading.
+
+
+---
+
+### Wireframes
+
+
+#### Mobile
+
+- ![Wireframe-mobile-home](documentation/wire-mobile-index.png)
+- ![Wireframe-mobile-videos](documentation/wire-mobile-videos.png)
+- ![Wireframe-mobile-signup](documentation/wire-mobile-signup.png)
+
+
+#### Desktop
+
+![Wireframe-desktop-home](documentation/wire-index.png)
+![Wireframe-desktop-videos](documentation/wire-video.png)
+![Wireframe-desktop-signup](documentation/wire-signup.png)
+
+---
+
+## Testing
+
+Refer to my [TESTING.md] file to see the testing done.
+
+---
+
+## Deployment
+
+Deployment to Github
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repository, navigate to the Settings tab
+- From the source section drop-down menu, select the Main Branch, then click "Save".
+- The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+The live link can be found here
+
+
+---
+
+## Future Features to Implement
+
+- Add better responsiveness to the page in sense of hover effects and other fun features.
+
+- Restructure css code with parent and child elements and less Id's and classes for less complicated code. 
+
+- Finish the flexbox for the videos page, (make it look like it does in the wireframe.)
+
+- Add more in depth content as well as a contact us function/page.
+
+- Add more Favicons to the pages as fun features.
+
+- Improve the quantity and quality of my commit messages. The commit messages where sort of shaky throughout my work and i will make them more consitent and better in my next project.
+
+---
+
+## Credits
+
++ #### Content
+
+- Inspiration for background hover effect in nav and footer came from love running project.
+- Inpiration for the code form came from code institute.
+- An inspiration for some css code came from [Kevin Powell] (https://www.youtube/user/kepow0b)
+- Used code institute fullstack developer course to go back and relearn ways to code.
+- https://www.w3schools.com/ was used to get help with coding
+
++ #### Media
+
++ [Hero image] (https://pngtree.com/freebackground/an-empty-gym-with-some-machines_3105884.html)
+
++ Main page
+- [Coach picture] (https://www.wallpaperflare.com/fitness-gym-coach-training-routine-results-planning-healthy-life-wallpaper-hohtk)
+
++ Video page 
+- [background image] (https://wallpapers.com/4k-carbon-fiber)
+
+- [1st video] (https://www.youtube.com/watch?v=Y19ZgAcj0sg&embeds_referring_euri=https%3A%2F%2F8000-kevinolm10-fitnesszone-xlild1n5sid.ws.codeinstitute-ide.net%2F&source_ve_path=MjM4NTE&feature=emb_title)
+
+- [2nd video] (https://www.youtube.com/watch?v=iMlkdnZ_01k&embeds_referring_euri=https%3A%2F%2F8000-kevinolm10-fitnesszone-xlild1n5sid.ws.codeinstitute-ide.net%2F&source_ve_path=MjM4NTE&feature=emb_title)
+
+- [3rd video] (https://www.youtube.com/watch?v=7U_jp8i7Asg&embeds_referring_euri=https%3A%2F%2F8000-kevinolm10-fitnesszone-xlild1n5sid.ws.codeinstitute-ide.net%2F&source_ve_path=MjM4NTE&feature=emb_title)
+
++ Sign up page
+- [background image] (https://www.muscleandfitness.com/workout-plan/workouts/workout-routines/21-day-workout-chiseled-upper-body/
+https://www.wallpaperflare.com/fitness-gym-coach-training-routine-results-planning-healthy-life-wallpaper-hohtk)
+
+
+---
+
+## Acknowledgments
+
+- An honorable mention is my mentor Julila Konn who has helped me with ideas and inspiration for the website!
+
+---
