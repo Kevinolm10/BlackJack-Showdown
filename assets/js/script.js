@@ -62,9 +62,24 @@ function startGame() {
         document.getElementsByClassName("players-cards")[0].append(imageImg);
     }
 
-    console.log(playerPoint)
-    document.getElementsByClassName("go").addEventListener("click", go);
-    document.getElementsByClassName("stay").addEventListener("click", stay);
+    console.log(playerPoint);
+    document.getElementsByClassName("go")[0].addEventListener("click", go);
+
+    function go() {
+        if (!goBtn) {
+            return;
+        }
+        let imageImg = document.createElement("img");
+        let image = cardDeck.pop();
+        imageImg.src = "./images/" + image + ".png";
+        playerPoint += getAmount(image);
+        playerAces += scanAce(image);
+        document.getElementsByClassName("players-cards")[0].append(imageImg);
+
+        if (smallAce(playerPoint, playerAces) > 21) {
+            goBtn = false;
+        }
+    }
 
     function getAmount(image) {
         let data = image.split("-");
