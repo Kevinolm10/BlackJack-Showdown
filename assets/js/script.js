@@ -15,6 +15,7 @@ window.onload = function () {
     buildCardDeck();
     mixCards();
     startGame();
+    playAgain();
 }
 
 function buildCardDeck() {
@@ -138,4 +139,11 @@ function smallAce(playerPoint, playerAces) {
         playerAces -= 1;
     }
     return playerPoint;
+}
+
+function playAgain() {
+    document.querySelector('.startover').addEventListener('click', function () {
+        window.location.reload();
+        return false;
+    });
 }
