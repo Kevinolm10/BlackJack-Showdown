@@ -3,12 +3,13 @@ let playerPoint = 0;
 let dealerAces = 0; // dealer and your ace count
 let playerAces = 0;
 let flip; // hidden card in the beginning
-let cardDeck = [];
-const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "a", "j", "q", "k"];
-const types = ["c", "d", "h", "s"];
-
+let cardDeck;
 
 let goBtn = true; //allows to go if you are under 21 points
+
+
+
+
 
 window.onload = function () {
     buildCardDeck();
@@ -17,6 +18,9 @@ window.onload = function () {
 }
 
 function buildCardDeck() {
+    let values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "a", "j", "q", "k"];
+    let types = ["c", "d", "h", "s"];
+    cardDeck = [];
     for (let i = 0; i < types.length; i++) { // Pushes an array of the possible cards to the function
         for (let f = 0; f < values.length; f++) {
             cardDeck.push(values[f] + "-" + types[i]);
@@ -46,7 +50,7 @@ function startGame() {
     while (dealerPoint < 17) {
         let imageImg = document.createElement("img");
         let image = cardDeck.pop();
-        imageImg.src = "./images/" + image + ".png";
+        imageImg.src = "./assets/images/" + image + ".png";
         dealerPoint += getAmount(image);
         dealerAces += scanAce(image);
         document.getElementsByClassName("dealers-cards")[0].append(imageImg);
@@ -57,7 +61,7 @@ function startGame() {
     for (let i = 0; i < 2; i++) {
         let imageImg = document.createElement("img");
         let image = cardDeck.pop();
-        imageImg.src = "./images/" + image + ".png";
+        imageImg.src = "./assets/images/" + image + ".png";
         playerPoint += getAmount(image);
         playerAces += scanAce(image);
         document.getElementsByClassName("players-cards")[0].append(imageImg);
@@ -74,7 +78,7 @@ function go() {
     }
     let imageImg = document.createElement("img");
     let image = cardDeck.pop();
-    imageImg.src = "./images/" + image + ".png";
+    imageImg.src = "./assets/images/" + image + ".png";
     playerPoint += getAmount(image);
     playerAces += scanAce(image);
     document.getElementsByClassName("players-cards")[0].append(imageImg);
@@ -89,23 +93,23 @@ function stay() {
     playerPoint = smallAce(playerPoint, playerAces)
 
     goBtn = false;
-    document.getElementsByClassName("hidden").src = "./images/" + hidden + ".png";
+    document.querySelector(".hidden").src = "./assets/images/" + flip + ".png";
 
     let message = "";
     if (playerPoint > 21) {
         message = "The dealer won!";
     } else if (dealerPoint > 21) {
         message = "You outplayed the dealer!"
-    } else if (playerPoint === dealerPoint) {
+    } else if (playerPoint == dealerPoint) {
         message = "It is a draw!"
     } else if (playerPoint > dealerPoint) {
         message = "You outplayed the dealer!"
     } else if (playerPoint < dealerPoint) {
         message = "The dealer won!"
     }
-    document.getElementsByClassName("dealer-points").innertext = dealerPoint;
-    document.getElementsByClassName("player-points").innertext = playerPoint;
-    document.getElementsByClassName("results").innertext = message;
+    document.querySelector(".dealer-points").innerText = dealerPoint;
+    document.querySelector(".player-points").innerText = playerPoint;
+    document.querySelector(".results").innerText = message;
 }
 
 function getAmount(image) {
@@ -130,7 +134,7 @@ function scanAce(image) {
 
 function smallAce(playerPoint, playerAces) {
     while (playerPoint > 21 && playerAces > 0) {
-        playerPoint += 10;
+        playerPoint -= 10;
         playerAces -= 1;
     }
     return playerPoint;
