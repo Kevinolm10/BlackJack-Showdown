@@ -17,23 +17,72 @@ body {
 
 /* Styling for Header */
 header {
-    background: red;
+    background-color: darkred;
     padding: 1rem;
+    color: white;
 }
 
-header .question {
-    height: 20px;
-    width: 20px;
+/* Styling for the unordered list in the dialog box */
+header ul {
+    text-align: center;
+    margin-left: 5px;
+}
+
+/* Game instructions button */
+.open {
+    height: 2rem;
+    width: 2rem;
+    background-color: black;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+/* Hover effect for game instructions button */
+.open:hover {
+    height: 3rem;
+    width: 3rem;
+    background-color: green;
+}
+
+/* Styling for closing button in dialog box */
+.close {
+    background-color: black;
+    color: white;
+    height: 2rem;
+    width: 4rem;
     margin-top: 1rem;
 }
 
+/* Styling for hover effect when closing dialog box */
+.close:hover {
+    height: 4rem;
+    width: 6rem;
+    background-color: darkred;
+}
+
+/* Styling for the dialog box*/
+.dial {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 1em;
+    border: 1px;
+    box-shadow: 0 0 1em rgb(0 0 0 / .3);
+    font-size: medium;
+    justify-content: center;
+    background-color: orange;
+}
+
+/* General styling for all main h2 elements */
 main h2 {
     display: inline-block;
     color: white;
     padding: 0.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     background-color: black;
 }
 
+/* Styling for the card img */
 .dealers-cards img {
     height: 160px;
     width: 120px;
@@ -46,27 +95,74 @@ main h2 {
     margin: 3px;
 }
 
+/* Styling for the buttons */
 .go {
+    margin-right: 1rem;
     height: 2rem;
     width: 4rem;
+    background-color: green;
+}
+
+.go:hover {
+    height: 4rem;
+    width: 6rem;
 }
 
 .stay {
     height: 2rem;
     width: 4rem;
+    background-color: red;
+}
+
+.stay:hover {
+    height: 4rem;
+    width: 6rem;
 }
 
 .startover {
+    margin-left: 1rem;
     height: 2rem;
     width: 4rem;
-    margin-top: 2rem;
+
+    background-color: orange;
 }
 
+.startover:hover {
+    height: 4rem;
+    width: 6rem;
+}
+
+.results {
+    background-color: black;
+    color: white;
+    margin-left: 20rem;
+    margin-right: 20rem;
+    font-size: 200%;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+/* footer styling */
 footer {
-    background: red;
+    background: darkred;
     padding: 1rem;
 }
 
+footer p {
+    color: white;
+}
+
+footer a {
+    color: black;
+    font-size: 150%;
+}
+
+footer a:hover {
+    color: orange;
+    font-size: 200%;
+}
+
+/* Media Query styles */
 @media screen and (min-width: 576px) {
     .dealers-cards img {
         height: 300px;
@@ -84,9 +180,7 @@ footer {
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
     header {
-        background: red;
         padding: 1rem;
-        font-size: 200%;
     }
 
     .dealers-cards img {
@@ -131,9 +225,8 @@ footer {
 
 /* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-    header {
-        background: red;
-        padding: 1rem;
+    main p {
+        margin-top: 1rem;
     }
 }
 
