@@ -32,12 +32,11 @@ Our website can be accessed through this [link](https://kevinolm10.github.io/Bla
 
 #### Game information box
 
-   - When the user lands on the page, the first thing they see is a vibrant red background with the title of the website in well defined lettering.
+   - When the user lands on the page, the first thing they see is a darkred background with the title of the website in well defined lettering.
    - Under the title i have provided the user with the text of game information with an arrow pointing to where they should click.
    - The user can press the box with the icon of a question mark to bring up an alert in javascript which provide the game instructions.
    
-
-![Header](documentation/header.PNG)
+![dialogbox](documentation/dia.png)
 
 ---
 
@@ -47,25 +46,33 @@ Our website can be accessed through this [link](https://kevinolm10.github.io/Bla
 * Introduces user to the game with the game information and buttons to start the game.
 * The big responsive buttons helps the user to navigate the site and know where to press.
 
-![Home Page](documentation/main.PNG)
+![Home Page](documentation/main2.png)
 
 ---
++ ### Responsive buttons
 
+* The game provides responsive buttons
+* Theses buttons have hover effects which changes colors and enlarges
+* The buttons have clear lettering which makes it easy for the user to know what is what
+
+![buttons](documentation/buttons.png)
+
+---
 + #### Hero section
 
  - This section introduces the user to a background image of a gambling table with  the actual game being put on top of it.
  - The game includes the scoring of the two parts, the cards being dealt and buttons to press.
 
- ![Hero](documentation/main.PNG)
+ ![Hero](documentation/main2.png)
 
 ---
 
  + #### The Footer
 
-- The footer is designed with simplicity in mind in which it is just a text design which says "A fun way to experience blackjack!".
-- The footer has a vibrant red color which ties together with the header.
+- The footer is designed with simplicity in mind in which it is just a text design "visit the creator" and a link to my github.
+- The footer has a darkred color which ties together with the header.
 
-![footer](documentation/footer.PNG)
+![footer](documentation/footer2.png)
 
 ---
 
