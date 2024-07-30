@@ -115,7 +115,7 @@ Our website can be accessed through this [link](https://kevinolm10.github.io/Bla
 
 ## Testing
 
-Refer to my [TESTING.md] file to see the testing done.
+Refer to my [TESTING.md](TESTING.md) file to see the testing done.
 
 ---
 
@@ -160,13 +160,11 @@ The live link can be found here
 
 + #### Media
 
-+ [Hero-image] (https://www.pexels.com/photo/dealer-holding-playing-cards-7594301/)
++ [Hero-image](https://www.pexels.com/photo/dealer-holding-playing-cards-7594301/)
 
-+ [Card-images]
-- [Cards] (https://opengameart.org/content/playing-cards-vector-png)
++ [Cards](https://opengameart.org/content/playing-cards-vector-png)
 
-+ [Card-back-image]
-- [Hidden-Card] (https://opengameart.org/content/colorful-poker-card-back)
++ [Hidden-Card](https://opengameart.org/content/colorful-poker-card-back)
 ---
 
 ## Acknowledgments
