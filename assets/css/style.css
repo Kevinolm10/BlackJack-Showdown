@@ -6,6 +6,7 @@
 
 /* General styling for body element */
 body {
+    background-image: url("../images/gambling.jpg");
     text-align: center;
     display: flex;
     min-height: 100vh;
@@ -62,3 +63,71 @@ footer {
     background: red;
     padding: 1rem;
 }
+
+@media screen and (min-width: 576px) {
+    .dealers-cards img {
+        height: 300px;
+        width: 200px;
+        margin: 3px;
+    }
+
+    .players-cards img {
+        height: 300px;
+        width: 200px;
+        margin: 3px;
+    }
+}
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    header {
+        background: red;
+        padding: 1rem;
+        font-size: 200%;
+    }
+
+    .dealers-cards img {
+        height: 200px;
+        width: 150px;
+        margin: 3px;
+    }
+
+    .players-cards img {
+        height: 200px;
+        width: 150px;
+        margin: 3px;
+    }
+
+    main h2 {
+        font-size: 200%;
+    }
+
+    .go {
+        height: 3rem;
+        width: 5rem;
+        font-size: 150%;
+    }
+
+    .stay {
+        height: 3rem;
+        width: 5rem;
+        font-size: 150%;
+    }
+
+    .startover {
+        height: 3rem;
+        width: 5rem;
+        margin-top: 2rem;
+        font-size: 130%;
+    }
+}
+
+/* Large devices (laptops and desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    header {
+        background: red;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {}
