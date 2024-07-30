@@ -18,7 +18,7 @@
 ## Manual testing
 
 | feature | action | expected result | tested | passed |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Game instructions box | Clickable button | When button is pressed, user gets an alert with game instructions | Yes | Yes |
 | Go button | Clickable button | When button is pressed, user gets a new card if under 21 points | Yes | Yes |
 | Stay button | Clickable button | When button is pressed, the turn is over and the dealer gets his cards | Yes | Yes |
@@ -30,27 +30,27 @@
 
 #### Home Page
 
-![Video Page HTML Validator](documentation/html-validator.PNG)
+![Video Page HTML Validator](documentation/html-validator2.PNG)
 
 - No errors shown
 
 + ### CSS
 
-![CSS Validator](documentation/css-validator.PNG)
+![CSS Validator](documentation/css-validator2.png)
 
 - No errors shown
 
 + ### Javascript/jshint
 
-![Jshint Validator](documentation/jshint-validator.PNG)
+![Jshint Validator](documentation/jshint-validator2.png)
 
 ## LightHouse Report
 
 ### Home Page
 
- ![Home Page Lighthouse Desktop](documentation/lighthouse-desktop.PNG)
+ ![Home Page Lighthouse Desktop](documentation/lighthouse-desk.png)
 
- ![Home Page Lighthouse Mobile](documentation/lighthouse-mobile.PNG)
+ ![Home Page Lighthouse Mobile](documentation/lighthouse-mob.png)
 
 ---
 
