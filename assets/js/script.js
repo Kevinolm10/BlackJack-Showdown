@@ -117,13 +117,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             '1. The goal of blackjack is to beat the dealer\'s hand without going over 21.\n' +
             '2. Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.\n' +
             '3. Each player starts with two cards, one of the dealer\'s cards is hidden until the end.\n' +
-            '4. To "Hit" is to ask for another card. To "Stand" is to hold your total and end your turn.\n' +
+            '4. To "Go" is to ask for another card. To "Stand" is to hold your total and end your turn.\n' +
             '5. If you go over 21 you bust, and the dealer wins regardless of the dealer\'s hand.\n' +
             '6. If you are dealt 21 from the start (Ace & 10), you got a blackjack.\n' +
-            '7. Dealer will hit until his/her cards total 17 or higher.\n' +
-            '8. Doubling is like a hit, only the bet is doubled, and you only get one more card.\n' +
-            '9. Split can be done when you have two of the same card - the pair is split into two hands.\n' +
-            '10. Splitting also doubles the bet, because each new hand is worth the original bet.');
+            '7. Dealer will hit until his/her cards total 17 or higher.\n');
     });
 });
 
