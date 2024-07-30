@@ -2,7 +2,7 @@
 
 This is a website dedicated to making people experience the beautiful game of Blackjack!
 
-Our website can be accessed through this [link](https://kevinolm10.github.io/Fitness-zone/)
+Our website can be accessed through this [link](https://kevinolm10.github.io/BlackJack-Showdown/)
 
 
 
@@ -17,22 +17,21 @@ Our website can be accessed through this [link](https://kevinolm10.github.io/Fit
 
 ### Returning Visitor:
 
-* Being a Returning Visitor, I want the user to be able to go back to the 3 core videos to learn.
-* Being a Returning Visitor, i want the user to sign up to the form when they feel like they have mastered the 3 movements and want more.
+* Being a Returning Visitor, 
+* Being a Returning Visitor, 
 
 ### Frequent Visitor:
 
-* Being a Frequent User, the site is supposed to make the user feel like they are getting somewhere with learning the movements.
-* Being a Frequent User, the site is supposed to finally make the user sign up and start the real program.
-
+* Being a Frequent User, 
+* Being a Frequent User, 
 ## Features:
 
-### The navigation bar
+### Header
 
-#### Nav
+#### Game information box
 
-   - All the three pages includes our logo at the top left.
-   - An interactive navbar that makes it easy for the user to go to the section they want.
+   - The landing page includes a vibrant red background with the title BlackJack Showdown.
+   - Under t
    - It includes background color of white when hovered over for the user to actively see where they are.
    - Included in the nav bar is the following:
    * HOME - Directs the user to the homepage where they can read the purpose of the website.
