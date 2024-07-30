@@ -17,103 +17,55 @@ Our website can be accessed through this [link](https://kevinolm10.github.io/Bla
 
 ### Returning Visitor:
 
-* Being a Returning Visitor, 
-* Being a Returning Visitor, 
+* Being a Returning Visitor, I want the user to be able to re-read the game rules.
+* Being a Returning Visitor, I want the user to be able to play the game as intended and replay it with the restart button as many times as they want.
+* Being a Returning Visitor, I want the user to be able to track the score with the system i have implemented.
 
 ### Frequent Visitor:
 
-* Being a Frequent User, 
-* Being a Frequent User, 
+* Being a Frequent User, the website is supposed to be an enviornment where the user can come and play the beautiful game of Blackjack in there off time.
+* Being a Frequent User, I want the user to feel like they have a chance to learn the game, using the scoring system to defeat the dealer.
+
 ## Features:
 
 ### Header
 
 #### Game information box
 
-   - The landing page includes a vibrant red background with the title BlackJack Showdown.
-   - Under t
-   - It includes background color of white when hovered over for the user to actively see where they are.
-   - Included in the nav bar is the following:
-   * HOME - Directs the user to the homepage where they can read the purpose of the website.
-   * VIDEOS - Directs the user to the video page where they can watch and read about 3 core movements.
-   * SIGN UP - Directs the user to the sign up page where they can evolve their fitness journey with the program.
+   - When the user lands on the page, the first thing they see is a vibrant red background with the title of the website in well defined lettering.
+   - Under the title i have provided the user with the text of game information with an arrow pointing to where they should click.
+   - The user can press the box with the icon of a question mark to bring up an alert in javascript which provide the game instructions.
+   
 
-   - Nav is responsive:
-   * Nav is in column formation when in mobile format and levels out to a row when in tablet, laptop or desktop format.
-   * Nav is changing background-color when hovered over.
-
-![Nav](documentation/nav.png)
+![Header](documentation/header.PNG)
 
 ---
 
 + ### Landing/Home page
 
-* Introduces user to the purpose of the website and company.
-* Introduces user to one of our coaches and his acomplishments.
-* Helps user know where they can find other useful information through hyperlinks.
+* Introduces user to the purpose of the website and what kind of game is provided.
+* Introduces user to the game with the game information and buttons to start the game.
+* The big responsive buttons helps the user to navigate the site and know where to press.
 
-![Home Page](documentation/chrome.png)
+![Home Page](documentation/main.PNG)
 
 ---
 
 + #### Hero section
 
- - This section introduces the user to a dark background of a gym and orange faded text boxes covering the image. The text boxes contains the purpose of the website.
+ - This section introduces the user to a background image of a gambling table with  the actual game being put on top of it.
+ - The game includes the scoring of the two parts, the cards being dealt and buttons to press.
 
- - Inside the text there is hyperlinks.
-
- * Hyperlinks leads to all useful information
-
- ![Hero](documentation/chrome.png)
+ ![Hero](documentation/main.PNG)
 
 ---
 
  + #### The Footer
 
-- The footer is simple, with a background of orange and just social media links for the user to follow us on social media.
+- The footer is designed with simplicity in mind in which it is just a text design which says "A fun way to experience blackjack!".
+- The footer has a vibrant red color which ties together with the header.
 
-![footer](documentation/footer.png)
-
----
-
-+ ### Videos Page
-
-- This section contains 3 videos of core excersises that everyone should do to keep themselves fit.
-
-- The user can actively play and rewatch the videos both during and after workout to learn the movements. 
-
-- Each video has a brief description that helps the user understand what they are watching.
-
-- The videos page is responsive in a way that it responds to screen size and width to fit all videos in a good way.
-
-![videos](documentation/videos.png)
-
-
----
-
-+ #### Sign Up Page
-
-- The sign up section is straight forward and simple as it is just a background with a form covering it.
-
-- The forms contains an h2 element, 3 text boxes and 3 radio buttons, in a column formation.
-
-- Under the 3 radio buttons is a submit button that is colored black with white text.
-
-- The submit button is responsive in a way that when hovered over, it changes background color to black and text color to white.
-
-![Sign up](documentation/signup.png)
-
----
-
-+ ### Response Page
-
-- The response page only appears visible when the submit button is pressed with all information required is written. 
-
-- The page contains a thank you message as well as information regarding what they signed up for.
-
-- A call to action message appears bellow telling the user to return to the videos page to learn more.
-
-![Response Page](documentation/response.png)
+![footer](documentation/footer.PNG)
 
 ---
 
@@ -134,17 +86,14 @@ Our website can be accessed through this [link](https://kevinolm10.github.io/Bla
 
 - Black color used as main color for text on the website to make it easy to read.
 
--Darker orange color used for header, footer and all text background. This was used to get an industrial and gym feeling.
+- Red background color for the header as well as the footer to provide a sense of casino feeling for the user.
 
-- White color was used as background color for hover effects to make the buttons pop out more.
+- For the h2 elements i have used a black background with white color text to not distract the user from the main background image.
 
 
 ### Font types Used
 
-Lägg till main font
-![Main Font] ()
-
-- Open-sans was used as the font throughout the website as i thought it gave clearity when reading.
+- Trebuchet MS was used as the font throughout the website as i thought it gave a comic game like feeling which makes sense in card games.
 
 
 ---
@@ -154,16 +103,12 @@ Lägg till main font
 
 #### Mobile
 
-- ![Wireframe-mobile-home](documentation/wire-mobile-index.png)
-- ![Wireframe-mobile-videos](documentation/wire-mobile-videos.png)
-- ![Wireframe-mobile-signup](documentation/wire-mobile-signup.png)
+- ![Wireframe-mobile-home](documentation/wf1.png)
 
-
+---
 #### Desktop
 
-![Wireframe-desktop-home](documentation/wire-index.png)
-![Wireframe-desktop-videos](documentation/wire-video.png)
-![Wireframe-desktop-signup](documentation/wire-signup.png)
+![Wireframe-desktop-home](documentation/wf2.png)
 
 ---
 
@@ -190,11 +135,11 @@ The live link can be found here
 
 - Add better responsiveness to the page in sense of hover effects and other fun features.
 
-- Restructure css code with parent and child elements and less Id's and classes for less complicated code. 
+- Change the css for the page to make it more aesthetically pleasing. 
 
 - Finish the flexbox for the videos page, (make it look like it does in the wireframe.)
 
-- Add more in depth content as well as a contact us function/page.
+- Add more in depth content such as a betting system with fake money and a way to show highscores.
 
 - Add more Favicons to the pages as fun features.
 
@@ -206,33 +151,21 @@ The live link can be found here
 
 + #### Content
 
-- Inspiration for background hover effect in nav and footer came from love running project.
+- Inspiration for the project came from this tutorial [chris-lloyd] (https://codesandbox.io/s/javascript-beginner-tutorial-blackjack-epegw)
+- A big inspiration and help for the project in terms of javascript code came from [Newb2CodingCareer] (https://stackoverflow.com/questions/77293429/how-can-i-make-my-javascript-blackjack-game-have-one-function-to-add-up-the-valu).
 - Inpiration for the code form came from code institute.
-- An inspiration for some css code came from [Kevin Powell] (https://www.youtube/user/kepow0b)
 - Used code institute fullstack developer course to go back and relearn ways to code.
-- https://www.w3schools.com/ was used to get help with coding
+- https://www.w3schools.com/ was used to get help with coding.
 
 + #### Media
 
-+ [Hero image] (https://pngtree.com/freebackground/an-empty-gym-with-some-machines_3105884.html)
++ [Hero-image] (https://www.pexels.com/photo/dealer-holding-playing-cards-7594301/)
 
-+ Main page
-- [Coach picture] (https://www.wallpaperflare.com/fitness-gym-coach-training-routine-results-planning-healthy-life-wallpaper-hohtk)
++ [Card-images]
+- [Cards] (https://opengameart.org/content/playing-cards-vector-png)
 
-+ Video page 
-- [background image] (https://wallpapers.com/4k-carbon-fiber)
-
-- [1st video] (https://www.youtube.com/watch?v=Y19ZgAcj0sg&embeds_referring_euri=https%3A%2F%2F8000-kevinolm10-fitnesszone-xlild1n5sid.ws.codeinstitute-ide.net%2F&source_ve_path=MjM4NTE&feature=emb_title)
-
-- [2nd video] (https://www.youtube.com/watch?v=iMlkdnZ_01k&embeds_referring_euri=https%3A%2F%2F8000-kevinolm10-fitnesszone-xlild1n5sid.ws.codeinstitute-ide.net%2F&source_ve_path=MjM4NTE&feature=emb_title)
-
-- [3rd video] (https://www.youtube.com/watch?v=7U_jp8i7Asg&embeds_referring_euri=https%3A%2F%2F8000-kevinolm10-fitnesszone-xlild1n5sid.ws.codeinstitute-ide.net%2F&source_ve_path=MjM4NTE&feature=emb_title)
-
-+ Sign up page
-- [background image] (https://www.muscleandfitness.com/workout-plan/workouts/workout-routines/21-day-workout-chiseled-upper-body/
-https://www.wallpaperflare.com/fitness-gym-coach-training-routine-results-planning-healthy-life-wallpaper-hohtk)
-
-
++ [Card-back-image]
+- [Hidden-Card] (https://opengameart.org/content/colorful-poker-card-back)
 ---
 
 ## Acknowledgments
