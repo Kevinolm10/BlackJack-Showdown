@@ -1,37 +1,44 @@
-let dealerPoint = 0; // dealer and your points/sum
+/* jshint esversion: 11 */
+
+/* General scoring and checking variables for the game*/
+let dealerPoint = 0;
 let playerPoint = 0;
-let dealerAces = 0; // dealer and your ace count
+let dealerAces = 0;
 let playerAces = 0;
-let flip; // hidden card in the beginning
+let flip;
 let cardDeck;
 
-let goBtn = true; //allows to go if you are under 21 points
+let goBtn = true;
 
-
+/* This function loads the functions inside it when the page loads */
 window.onload = function () {
     buildCardDeck();
     mixCards();
     startGame();
     playAgain();
-}
+};
 
+/* This function builds the card deck 
+and assigns the cards with values and types.
+The double for loop, loops through the arrays.
+*/
 function buildCardDeck() {
     let values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "a", "j", "q", "k"];
     let types = ["c", "d", "h", "s"];
     cardDeck = [];
-    for (let i = 0; i < types.length; i++) { // Pushes an array of the possible cards to the function
+    for (let i = 0; i < types.length; i++) {
         for (let f = 0; f < values.length; f++) {
             cardDeck.push(values[f] + "-" + types[i]);
         }
-
     }
-    //console.log(cardDeck)
 }
 
-// Shuffle card function
+/* mixCards function shuffles the cards 
+and randomizes which cards should be picked 
+*/
 function mixCards() {
     for (let i = 0; i < cardDeck.length; i++) {
-        let f = Math.floor(Math.random() * cardDeck.length); // Chooses random card from 1-52
+        let f = Math.floor(Math.random() * cardDeck.length);
         let card = cardDeck[i];
         cardDeck[i] = cardDeck[f];
         cardDeck[f] = card;
@@ -39,23 +46,26 @@ function mixCards() {
     console.log(cardDeck);
 }
 
-//function for when the game starts
+/*
+The startGame function decides what happens when the game starts.
+The function allows us to produce random cards from the image list.
+It appends the card after it gets an image from the folder.
+*/
 function startGame() {
     flip = cardDeck.pop();
     dealerPoint += getAmount(flip);
     dealerAces += scanAce(flip);
-
+    // This whileloop is for the dealer to get a card.
     while (dealerPoint < 17) {
         let imageImg = document.createElement("img");
         let image = cardDeck.pop();
         imageImg.src = "./assets/images/" + image + ".png";
+        imageImg.setAttribute("alt", "playing card");
         dealerPoint += getAmount(image);
         dealerAces += scanAce(image);
         document.getElementsByClassName("dealers-cards")[0].append(imageImg);
     }
-
-    console.log(dealerPoint);
-
+    // This for loop is for the player to get a card.
     for (let i = 0; i < 2; i++) {
         let imageImg = document.createElement("img");
         let image = cardDeck.pop();
@@ -64,13 +74,17 @@ function startGame() {
         playerAces += scanAce(image);
         document.getElementsByClassName("players-cards")[0].append(imageImg);
     }
-
-    console.log(playerPoint);
+    /* 
+    Eventlisteners for the go or stay buttons
+    */
     document.getElementsByClassName("go")[0].addEventListener("click", go);
     document.getElementsByClassName("stay")[0].addEventListener("click", stay);
 }
 
-// go function to keep getting cards when pressing the go btn
+/* 
+This function makes it so we can press the go button
+and when we do, we get a new card
+*/
 function go() {
     if (!goBtn) {
         return;
@@ -87,6 +101,11 @@ function go() {
     }
 }
 
+/* 
+This function is for the stay button,
+it makes it so that when the button is pressed, our turn is over
+and a message is produced depending on the outcome.
+*/
 function stay() {
     dealerPoint = smallAce(dealerPoint, dealerAces);
     playerPoint = smallAce(playerPoint, playerAces);
@@ -111,19 +130,24 @@ function stay() {
     document.querySelector(".results").innerText = message;
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('.question').addEventListener('click', function () {
-        alert('Blackjack Instructions:\n\n' +
-            '1. The goal of blackjack is to beat the dealer\'s hand without going over 21.\n' +
-            '2. Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.\n' +
-            '3. Each player starts with two cards, one of the dealer\'s cards is hidden until the end.\n' +
-            '4. To "Go" is to ask for another card. To "Stand" is to hold your total and end your turn.\n' +
-            '5. If you go over 21 you bust, and the dealer wins regardless of the dealer\'s hand.\n' +
-            '6. If you are dealt 21 from the start (Ace & 10), you got a blackjack.\n' +
-            '7. Dealer will hit until his/her cards total 17 or higher.\n');
-    });
+// For dialog box to open and close
+let dialog = document.querySelector(".dial");
+let openDialog = document.querySelector(".open");
+let closeDialog = document.querySelector(".close");
+
+openDialog.addEventListener('click', () => {
+    dialog.show();
 });
 
+closeDialog.addEventListener('click', () => {
+    dialog.close();
+});
+
+/* 
+This function takes a card and uses the dash with value and type
+to produce a card. We are splitting the values and gets an array,
+for example q-c
+*/
 function getAmount(image) {
     let data = image.split("-");
     let amount = data[0];
@@ -137,7 +161,10 @@ function getAmount(image) {
     return parseInt(amount);
 }
 
-// Checks for ace and returns 0 or 1
+/* 
+Checks for an ace. It takes a card checks if it is an ace
+then returns 1 or 0
+*/
 function scanAce(image) {
     if (image[0] === "a") {
         return 1;
@@ -145,6 +172,9 @@ function scanAce(image) {
     return 0;
 }
 
+/**
+Function to check if ace is worth 10 or 1 if under 21
+  */
 function smallAce(playerPoint, playerAces) {
     while (playerPoint > 21 && playerAces > 0) {
         playerPoint -= 10;
@@ -152,7 +182,8 @@ function smallAce(playerPoint, playerAces) {
     }
     return playerPoint;
 }
-// function to start over the game
+
+/** Function to play the game again by pressing the restart button*/
 function playAgain() {
     document.querySelector('.startover').addEventListener('click', function () {
         window.location.reload();
