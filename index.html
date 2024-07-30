@@ -9,23 +9,44 @@
     <meta name="description" content="playing cards, cards, card games, blackjack, poker, fun card games">
     <meta name="keywords" content="cards, joker, blackjack, ace of spades, poker">
     <meta name="author" content="Kevin Ölmheden">
-    <title>BlackJack Showdown</title>
+    <script src="https://kit.fontawesome.com/8d89309be3.js" crossorigin="anonymous"></script>
     <!--Stylesheet-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="assets/css/style.css">
+    <title>BlackJack Showdown</title>
 </head>
 
 <body>
+    <!--header content-->
     <header>
         <h1>BlackJack Showdown</h1>
         <br>
-        <P>Game instructions ></P>
-        <button class="question"><i class="fa-solid fa-block-question"></i></button>
+        <p>Game Instructions</p>
+        <button class="open"><i class="fa-solid fa-question"></i></button>
+        <dialog class="dial">
+            <ul>
+                <li>Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.</li>
+                <li>Each player starts with two cards, one of the dealer's cards is hidden until the end.</li>
+                <li>To "Go" is to ask for another card. To "Stand" is to hold your total and end your turn.</li>
+                <li>If you go over 21 you bust, and the dealer wins regardless of the dealer\'s hand.</li>
+                <li>If you are dealt 21 from the start (Ace & 10), you got a blackjack.</li>
+                <li>Dealer will hit until his/her cards total 17 or higher</li>
+            </ul>
+            <button class="close">Close</button>
+        </dialog>
     </header>
 
+    <!--Main content-->
     <main>
         <h2>Points to the Dealer: <span class="dealer-points"></span></h2>
         <div class="dealers-cards">
-            <img class="hidden" src="assets/images/carback.png" alt="Joker">
+            <img class="hidden" src="assets/images/carback.png" rel alt="hidden joker playing card">
         </div>
         <h2>Your points: <span class="player-points"></span></h2>
         <div class="players-cards"></div>
@@ -37,10 +58,12 @@
         <p class="results"></p>
     </main>
 
+    <!--Footer content-->
     <footer>
-        <p>A fun way to experience blackjack!</p>
+        <p>Visit the creator on Github</p>
+        <a href="https://github.com/Kevinolm10/BlackJack-Showdown" target="_blank" rel="noopener"
+            aria-label="visit the creator on Github! (opens in a new tab)"><i class="fa-brands fa-github"></i></a>
     </footer>
-
     <script src="assets/js/script.js"></script>
 </body>
 
