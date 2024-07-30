@@ -74,6 +74,7 @@ Our website can be accessed through this [link](https://kevinolm10.github.io/Bla
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) is used to create the foundation of the website.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - Was used to style and place the elements of the website.
 - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) - Flexbox is used to place and rearrange the elements on the website.
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - Was used to code the game and responsiveness.
 - [Balsamiq](https://balsamiq.com/) The wireframes was created in balsamiq.
 - [Gitpod](https://gitpod.com/) Gitpod was used as the tool to write code.
 - [GitHub](https://github.com/) was used to host the code of the website.
