@@ -28,7 +28,10 @@ header .question {
 }
 
 main h2 {
-    padding: 1rem;
+    display: inline-block;
+    color: white;
+    padding: 0.5rem;
+    background-color: black;
 }
 
 .dealers-cards img {
@@ -108,6 +111,10 @@ footer {
         font-size: 150%;
     }
 
+    footer {
+        font-size: 150%;
+    }
+
     .stay {
         height: 3rem;
         width: 5rem;
@@ -130,4 +137,8 @@ footer {
     }
 }
 
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+    header {
+        font-size: 100%;
+    }
+}
