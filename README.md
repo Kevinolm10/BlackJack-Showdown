@@ -145,11 +145,13 @@ The live link can be found here
 
 - Change the css for the page to make it more aesthetically pleasing. 
 
-- Finish the flexbox for the videos page, (make it look like it does in the wireframe.)
-
 - Add more in depth content such as a betting system with fake money and a way to show highscores.
 
 - Add more Favicons to the pages as fun features.
+
+- Add a feature that hides the go button when you cant take anymore cards. 
+
+- Implement features that provide the user with more info about in which step they are in the game.
 
 - Improve the quantity and quality of my commit messages. The commit messages where sort of shaky throughout my work and i will make them more consitent and better in my next project.
 
