@@ -4,15 +4,15 @@
 
 - Google Chrome:
 
-![Chrome](documentation/main.PNG)
+![Chrome](documentation/main2.png)
 
 - Microsoft Edge:
 
-![Edge](documentation/edge.PNG)
+![Edge](documentation/edge2.png)
 
 - Safari:
 
-![Safari](lägg till)
+![Safari](documentation/safari.png)
 
 
 ## Manual testing
@@ -30,7 +30,7 @@
 
 #### Home Page
 
-![Video Page HTML Validator](documentation/html-validator2.PNG)
+![HTML Validator](documentation/html-validator2.png)
 
 - No errors shown
 
@@ -48,9 +48,11 @@
 
 ### Home Page
 
- ![Home Page Lighthouse Desktop](documentation/lighthouse-desk.png)
+#### Desktop
+ ![Home Page Lighthouse Desktop](documentation/lighthouse2-desk.png)
 
- ![Home Page Lighthouse Mobile](documentation/lighthouse-mob.png)
+#### Mobile
+ ![Home Page Lighthouse Mobile](documentation/lighthouse-mob2.png)
 
 ---
 
