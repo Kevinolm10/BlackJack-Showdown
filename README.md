@@ -155,6 +155,8 @@ The live link can be found here
 
 - Improve the quantity and quality of my commit messages. The commit messages where sort of shaky throughout my work and i will make them more consitent and better in my next project.
 
+- Improve performance for lighthouse.
+
 ---
 
 ## Credits
