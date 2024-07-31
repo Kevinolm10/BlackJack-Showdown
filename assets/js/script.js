@@ -1,6 +1,8 @@
 /* jshint esversion: 11 */
 
-/* General scoring and checking variables for the game*/
+/* 
+ *General scoring and checking variables for the game
+ */
 let dealerPoint = 0;
 let playerPoint = 0;
 let dealerAces = 0;
@@ -10,7 +12,9 @@ let cardDeck;
 
 let goBtn = true;
 
-/* This function loads the functions inside it when the page loads */
+/* 
+ *This function loads the functions inside it when the page loads 
+ */
 window.onload = function () {
     buildCardDeck();
     mixCards();
@@ -18,10 +22,11 @@ window.onload = function () {
     playAgain();
 };
 
-/* This function builds the card deck 
-and assigns the cards with values and types.
-The double for loop, loops through the arrays.
-*/
+/* 
+ *This function builds the card deck 
+ *and assigns the cards with values and types.
+ *The double for loop, loops through the arrays.
+ */
 function buildCardDeck() {
     let values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "a", "j", "q", "k"];
     let types = ["c", "d", "h", "s"];
@@ -33,9 +38,10 @@ function buildCardDeck() {
     }
 }
 
-/* mixCards function shuffles the cards 
-and randomizes which cards should be picked 
-*/
+/*
+ *mixCards function shuffles the cards 
+ *and randomizes which cards should be picked 
+ */
 function mixCards() {
     for (let i = 0; i < cardDeck.length; i++) {
         let f = Math.floor(Math.random() * cardDeck.length);
@@ -47,10 +53,10 @@ function mixCards() {
 }
 
 /*
-The startGame function decides what happens when the game starts.
-The function allows us to produce random cards from the image list.
-It appends the card after it gets an image from the folder.
-*/
+ *The startGame function decides what happens when the game starts.
+ *The function allows us to produce random cards from the image list.
+ *It appends the card after it gets an image from the folder.
+ */
 function startGame() {
     flip = cardDeck.pop();
     dealerPoint += getAmount(flip);
@@ -75,16 +81,16 @@ function startGame() {
         document.getElementsByClassName("players-cards")[0].append(imageImg);
     }
     /* 
-    Eventlisteners for the go or stay buttons
-    */
+     *Eventlisteners for the go or stay buttons
+     */
     document.getElementsByClassName("go")[0].addEventListener("click", go);
     document.getElementsByClassName("stay")[0].addEventListener("click", stay);
 }
 
 /* 
-This function makes it so we can press the go button
-and when we do, we get a new card
-*/
+ *This function makes it so we can press the go button
+ *and when we do, we get a new card
+ */
 function go() {
     if (!goBtn) {
         return;
@@ -102,10 +108,10 @@ function go() {
 }
 
 /* 
-This function is for the stay button,
-it makes it so that when the button is pressed, our turn is over
-and a message is produced depending on the outcome.
-*/
+ *This function is for the stay button,
+ *it makes it so that when the button is pressed, our turn is over
+ *and a message is produced depending on the outcome.
+ */
 function stay() {
     dealerPoint = smallAce(dealerPoint, dealerAces);
     playerPoint = smallAce(playerPoint, playerAces);
@@ -144,10 +150,10 @@ closeDialog.addEventListener('click', () => {
 });
 
 /* 
-This function takes a card and uses the dash with value and type
-to produce a card. We are splitting the values and gets an array,
-for example q-c
-*/
+ *This function takes a card and uses the dash with value and type
+ *to produce a card. We are splitting the values and gets an array,
+ *for example q-c
+ */
 function getAmount(image) {
     let data = image.split("-");
     let amount = data[0];
@@ -162,9 +168,9 @@ function getAmount(image) {
 }
 
 /* 
-Checks for an ace. It takes a card checks if it is an ace
-then returns 1 or 0
-*/
+ *Checks for an ace. It takes a card checks if it is an ace
+ *then returns 1 or 0
+ */
 function scanAce(image) {
     if (image[0] === "a") {
         return 1;
@@ -173,8 +179,8 @@ function scanAce(image) {
 }
 
 /**
-Function to check if ace is worth 10 or 1 if under 21
-  */
+ *Function to check if ace is worth 10 or 1 if under 21
+ */
 function smallAce(playerPoint, playerAces) {
     while (playerPoint > 21 && playerAces > 0) {
         playerPoint -= 10;
@@ -183,7 +189,9 @@ function smallAce(playerPoint, playerAces) {
     return playerPoint;
 }
 
-/** Function to play the game again by pressing the restart button*/
+/*
+ * Function to play the game again by pressing the restart button
+ */
 function playAgain() {
     document.querySelector('.startover').addEventListener('click', function () {
         window.location.reload();
