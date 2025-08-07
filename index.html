@@ -23,46 +23,54 @@
 </head>
 
 <body>
-    <!--header content-->
     <header>
         <h1>BlackJack Showdown</h1>
-        <br>
         <p>Game Instructions</p>
-        <button class="open"><i class="fa-solid fa-question"></i></button>
-        <dialog class="dial">
+        <button class="open" aria-label="Open game instructions"><i class="fa-solid fa-question"></i></button>
+        <dialog class="dial" aria-labelledby="instructions-title">
+            <h3 id="instructions-title" style="color: var(--deep-black); margin-bottom: 1rem; font-family: 'Cinzel', serif;">Game Rules</h3>
             <ul>
                 <li>Face cards are worth 10. Aces are worth 1 or 11, whichever makes a better hand.</li>
                 <li>Each player starts with two cards, one of the dealer's cards is hidden until the end.</li>
-                <li>To "Go" is to ask for another card. To "Stand" is to hold your total and end your turn.</li>
-                <li>If you go over 21 you bust, and the dealer wins regardless of the dealer\'s hand.</li>
+                <li>To "Go" is to ask for another card. To "Stay" is to hold your total and end your turn.</li>
+                <li>If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.</li>
                 <li>If you are dealt 21 from the start (Ace & 10), you got a blackjack.</li>
-                <li>Dealer will hit until his/her cards total 17 or higher</li>
+                <li>Dealer will hit until their cards total 17 or higher.</li>
             </ul>
-            <button class="close">Close</button>
+            <button class="close" aria-label="Close instructions">Close</button>
         </dialog>
     </header>
 
-    <!--Main content-->
     <main>
-        <h2>Points to the Dealer: <span class="dealer-points"></span></h2>
-        <div class="dealers-cards">
-            <img class="hidden" src="assets/images/carback.png" rel alt="hidden joker playing card">
-        </div>
-        <h2>Your points: <span class="player-points"></span></h2>
-        <div class="players-cards"></div>
+        <section class="game-area">
+            <div class="dealer-section">
+                <h2>Dealer Points: <span class="dealer-points">0</span></h2>
+                <div class="dealers-cards" aria-label="Dealer's cards">
+                    <img class="hidden" src="assets/images/carback.png" alt="Hidden dealer card">
+                </div>
+            </div>
 
-        <br>
-        <button class="go">Go</button>
-        <button class="stay">Stay</button>
-        <button class="startover">Restart!</button>
-        <p class="results"></p>
+            <div class="player-section">
+                <h2>Your Points: <span class="player-points">0</span></h2>
+                <div class="players-cards" aria-label="Your cards"></div>
+            </div>
+        </section>
+
+        <div class="game-controls">
+            <button class="go" aria-label="Draw another card">Hit</button>
+            <button class="stay" aria-label="End your turn">Stay</button>
+            <button class="startover" aria-label="Start a new game">New Game</button>
+        </div>
+
+        <div class="results" role="status" aria-live="polite"></div>
     </main>
 
-    <!--Footer content-->
     <footer>
-        <p>Visit the creator on Github</p>
+        <p>Visit the creator on GitHub</p>
         <a href="https://github.com/Kevinolm10/BlackJack-Showdown" target="_blank" rel="noopener"
-            aria-label="visit the creator on Github! (opens in a new tab)"><i class="fa-brands fa-github"></i></a>
+            aria-label="Visit the creator on GitHub (opens in a new tab)">
+            <i class="fa-brands fa-github"></i>
+        </a>
     </footer>
     <script src="assets/js/script.js"></script>
 </body>
