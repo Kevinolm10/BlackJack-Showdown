@@ -19,6 +19,7 @@ window.onload = function () {
     buildCardDeck();
     mixCards();
     startGame();
+    pointTracker(dealerPoint, playerPoint);
     playAgain();
 };
 
@@ -87,7 +88,12 @@ function startGame() {
     document.getElementsByClassName("stay")[0].addEventListener("click", stay);
 }
 
-/* 
+function pointTracker(dealerPoint, playerPoint) {
+    document.querySelector(".dealer-points").innerText = dealerPoint;
+    document.querySelector(".player-points").innerText = playerPoint;
+}
+
+/*
  *This function makes it so we can press the go button
  *and when we do, we get a new card
  */
@@ -101,6 +107,9 @@ function go() {
     playerPoint += getAmount(image);
     playerAces += scanAce(image);
     document.getElementsByClassName("players-cards")[0].append(imageImg);
+
+    // Update the displayed points after adding a new card
+    pointTracker(dealerPoint, playerPoint);
 
     if (smallAce(playerPoint, playerAces) > 21) {
         goBtn = false;
@@ -121,7 +130,7 @@ function stay() {
 
     let message = "";
     if (playerPoint > 21) {
-        message = "The dealer won!";
+        message = "Bust! The dealer won!";
     } else if (dealerPoint > 21) {
         message = "You outplayed the dealer!";
     } else if (playerPoint == dealerPoint) {
@@ -142,7 +151,7 @@ let openDialog = document.querySelector(".open");
 let closeDialog = document.querySelector(".close");
 
 openDialog.addEventListener('click', () => {
-    dialog.show();
+    dialog.showModal();
 });
 
 closeDialog.addEventListener('click', () => {
