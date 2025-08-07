@@ -1,250 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General styling for body element */
+:root {
+    --primary-gold: #D4AF37;
+    --dark-gold: #B8860B;
+    --casino-green: #0F5132;
+    --casino-red: #8B0000;
+    --deep-black: #0A0A0A;
+    --card-shadow: rgba(0, 0, 0, 0.8);
+    --glow-effect: rgba(212, 175, 55, 0.6);
+    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
 body {
-    background-image: url("../images/gambling.jpg");
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+    background-attachment: fixed;
     text-align: center;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* Styling for Header */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/gambling.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+}
+
 header {
-  background-color: #1C1C1C;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-family: 'Cinzel',
-  serif;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(135deg, var(--deep-black) 0%, #1a1a1a 100%);
+    color: var(--primary-gold);
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--primary-gold);
+    position: relative;
 }
 
-/* Styling for the unordered list in the dialog box */
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: var(--text-shadow);
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
 header ul {
     list-style: none;
-    padding: 10px;
+    padding: 1.5rem;
     margin: 0;
     text-align: left;
-    line-height: 1.5;
-    font-size: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    font-family: 'Cinzel',
-    serif;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--deep-black);
+    position: relative;
+    z-index: 10001;
 }
 
-/* Game instructions button */
+header ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    z-index: 10001;
+}
+
+header ul li::before {
+    content: '♠';
+    position: absolute;
+    left: 0;
+    color: var(--casino-red);
+    font-weight: bold;
+    z-index: 10001;
+}
+
+.dial h3 {
+    position: relative;
+    z-index: 10001;
+    color: var(--deep-black);
+}
+
+.dial * {
+    position: relative;
+    z-index: 10001;
+}
+
 .open {
     height: 2rem;
     width: 2rem;
-    background-color: #F5F5F5;
-    color: black;
-    margin-top: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+    color: var(--deep-black);
+    border: none;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
 }
 
-/* Hover effect for game instructions button */
 .open:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-    color: black;
-    text-shadow: 0 0 5px rgb(255, 255, 255);
-    box-shadow: 0 8px 16px rgb(255, 255, 255);
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+    background: linear-gradient(135deg, #FFD700, var(--primary-gold));
 }
 
-/* Styling for closing button in dialog box */
 .close {
-    background-color: #8B0000;
+    background: linear-gradient(135deg, var(--casino-red), #A0001A);
     color: white;
-    height: 2rem;
-    width: 4rem;
-    margin-top: 1rem;
+    height: 2.5rem;
+    width: 5rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
 }
 
-/* Styling for hover effect when closing dialog box */
 .close:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-    color: white;
-    text-shadow: 0 0 5px rgb(255, 255, 255);
-    box-shadow: 0 8px 16px rgb(255, 255, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.6);
+    background: linear-gradient(135deg, #A0001A, var(--casino-red));
 }
 
-/* Styling for the dialog box*/
 .dial {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 8px;
-    border: 1px;
-    box-shadow: 0 0 1em rgb(0 0 0 / .3);
-    font-size: medium;
-    justify-content: center;
-    background-color: #F5F5F5;
-    z-index: 1000;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 20px;
+    border: 3px solid var(--primary-gold);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 245, 0.95));
+    z-index: 10000;
+    padding: 2rem;
+    animation: dialogSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* General styling for all main h2 elements */
+.dial::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    animation: backdropFadeIn 0.3s ease-out;
+    z-index: 9999;
+}
+
+.dial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+}
+
+.dial-overlay.active {
+    display: block;
+}
+
+.dial[open] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes dialogSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes backdropFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 0;
+}
+
+.game-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.dealer-section, .player-section {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 main h2 {
     display: inline-block;
-    color: white;
-    background-color: rgba(28, 28, 28, 0.8);
-    padding: 0.75rem 1.25rem;
-    margin: 1rem auto;
+    color: var(--primary-gold);
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(26, 26, 26, 0.8));
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
     font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-shadow: var(--text-shadow);
+    letter-spacing: 0.5px;
 }
 
-
-/* Styling for the card img */
-.dealers-cards img {
-    height: 160px;
-    width: 120px;
-    margin: 3px;
+main h2 span {
+    color: #FFD700;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
 }
 
-.players-cards img {
-    height: 160px;
-    width: 120px;
-    margin: 3px;
+.dealers-cards, .players-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 0.3rem 0;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    min-height: 120px;
+    align-items: center;
 }
 
-/* Styling for the buttons */
+.dealers-cards img, .players-cards img {
+    height: 110px;
+    width: 82px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.dealers-cards img:hover, .players-cards img:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px var(--card-shadow), 0 0 20px var(--glow-effect);
+}
+
+.dealers-cards img, .players-cards img {
+    animation: cardDeal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(50px) rotateY(180deg);
+}
+
+@keyframes cardDeal {
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateY(0deg);
+    }
+}
+
+.hidden {
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--primary-gold), var(--dark-gold));
+    opacity: 0.1;
+    border-radius: 12px;
+}
+
+.game-controls {
+    display: flex;
+    gap: 0.8rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 button {
-    font-size: 75%;
-    height: 2rem;
-    width: 4rem;
-    font-family: 'Cinzel',
-        serif;
-    font-weight: bold;
+    font-size: 0.9rem;
+    height: 2.5rem;
+    min-width: 4.5rem;
+    padding: 0 1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(2px);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
 }
 
 button:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-    color: white;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(-1px);
 }
 
 .go {
-    background-color: #228B22;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.go:hover {
+    background: linear-gradient(135deg, #20c997, #28a745);
+    box-shadow: 0 12px 30px rgba(40, 167, 69, 0.6);
 }
 
 .stay {
-    background-color: #8B0000;
+    background: linear-gradient(135deg, var(--casino-red), #dc3545);
+    color: white;
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+}
+
+.stay:hover {
+    background: linear-gradient(135deg, #dc3545, var(--casino-red));
+    box-shadow: 0 12px 30px rgba(139, 0, 0, 0.6);
 }
 
 .startover {
-    margin-left: 1rem;
-    height: 2rem;
-    width: 4rem;
-    background-color: #DAA520;
+    background: linear-gradient(135deg, var(--primary-gold), #ffc107);
+    color: var(--deep-black);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    font-weight: 700;
+}
+
+.startover:hover {
+    background: linear-gradient(135deg, #ffc107, var(--primary-gold));
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
 }
 
 .results {
-    background-color: black;
-    color: white;
-    margin-left: 20rem;
-    margin-right: 20rem;
-    font-size: 200%;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(26, 26, 26, 0.9));
+    color: var(--primary-gold);
+    padding: 0.8rem 1.5rem;
+    margin: 1rem auto;
+    max-width: 500px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    border-radius: 10px;
+    border: 1px solid var(--primary-gold);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    text-shadow: var(--text-shadow);
+    letter-spacing: 0.5px;
+    text-align: center;
+    min-height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: resultGlow 2s ease-in-out infinite alternate;
 }
 
-/* footer styling */
+@keyframes resultGlow {
+    from {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+    to {
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.3);
+    }
+}
+
 footer {
-    background-color: #1C1C1C;
-    color: #fff;
+    background: linear-gradient(135deg, var(--deep-black) 0%, #1a1a1a 100%);
+    color: var(--primary-gold);
     text-align: center;
     padding: 1rem;
-    font-family: 'Cinzel',
-    serif;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--primary-gold);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
 }
 
 footer p {
-    color: white;
+    color: var(--primary-gold);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
 }
 
 footer a {
-    color: #fff;
-    font-size: 150%;
+    color: var(--primary-gold);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 footer a:hover {
-    color: orange;
-    font-size: 200%;
+    color: #FFD700;
+    transform: scale(1.1) rotate(3deg);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    main h2 {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .dealers-cards img, .players-cards img {
+        height: 90px;
+        width: 67px;
+    }
+
+    .game-controls {
+        gap: 0.5rem;
+    }
+
+    button {
+        font-size: 0.8rem;
+        height: 2rem;
+        min-width: 3.5rem;
+    }
+
+    .results {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
 }
 
 @media screen and (min-width: 576px) {
-    .dealers-cards img {
-        height: 300px;
-        width: 200px;
-        margin: 3px;
-    }
-    .players-cards img {
-        height: 300px;
-        width: 200px;
-        margin: 3px;
+    .dealers-cards img, .players-cards img {
+        height: 100px;
+        width: 75px;
     }
 }
 
 @media screen and (min-width: 768px) {
-    .dealers-cards img {
-        height: 200px;
-        width: 150px;
-        margin: 3px;
+    header h1 {
+        font-size: 2.2rem;
     }
-    .players-cards img {
-        height: 200px;
-        width: 150px;
-        margin: 3px;
+
+    main h2 {
+        font-size: 1.2rem;
+    }
+
+    .dealers-cards img, .players-cards img {
+        height: 120px;
+        width: 90px;
+    }
+
+    .dial {
+        width: 70%;
     }
 }
 
 @media screen and (min-width: 992px) {
-
-    .dealers-cards img {
-        height: 250px;
-        width: 180px;
-        margin: 3px;
+    .dealers-cards img, .players-cards img {
+        height: 130px;
+        width: 97px;
     }
-    .players-cards img {
-        height: 250px;
-        width: 180px;
-        margin: 3px;
+
+    main {
+        padding: 1.5rem;
+    }
+
+    .results {
+        font-size: 1.3rem;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .dealers-cards img {
-        height: 300px;
-        width: 200px;
-        margin: 3px;
+    header h1 {
+        font-size: 2.5rem;
     }
-    .players-cards img {
-        height: 300px;
-        width: 200px;
-        margin: 3px;
+
+    .dealers-cards img, .players-cards img {
+        height: 140px;
+        width: 105px;
+    }
+
+    main h2 {
+        font-size: 1.3rem;
+    }
+
+    .dial {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .dealers-cards img, .players-cards img {
+        height: 150px;
+        width: 112px;
+    }
+
+    main h2 {
+        font-size: 1.4rem;
+    }
+
+    .results {
+        font-size: 1.4rem;
     }
 }
