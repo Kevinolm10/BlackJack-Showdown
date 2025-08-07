@@ -7,6 +7,8 @@
 /* General styling for body element */
 body {
     background-image: url("../images/gambling.jpg");
+    background-size: cover;
+    background-position: center;
     text-align: center;
     display: flex;
     min-height: 100vh;
@@ -17,36 +19,51 @@ body {
 
 /* Styling for Header */
 header {
-    background-color: darkred;
-    padding: 1rem;
-    color: white;
+  background-color: #1C1C1C;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Cinzel',
+  serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Styling for the unordered list in the dialog box */
 header ul {
-    text-align: center;
-    margin-left: 5px;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-family: 'Cinzel',
+    serif;
 }
 
 /* Game instructions button */
 .open {
     height: 2rem;
     width: 2rem;
-    background-color: black;
-    color: white;
+    background-color: #F5F5F5;
+    color: black;
     margin-top: 0.5rem;
 }
 
 /* Hover effect for game instructions button */
 .open:hover {
-    height: 3rem;
-    width: 3rem;
-    background-color: green;
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    color: black;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    box-shadow: 0 8px 16px rgb(255, 255, 255);
 }
 
 /* Styling for closing button in dialog box */
 .close {
-    background-color: black;
+    background-color: #8B0000;
     color: white;
     height: 2rem;
     width: 4rem;
@@ -55,32 +72,44 @@ header ul {
 
 /* Styling for hover effect when closing dialog box */
 .close:hover {
-    height: 4rem;
-    width: 6rem;
-    background-color: darkred;
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    box-shadow: 0 8px 16px rgb(255, 255, 255);
 }
 
 /* Styling for the dialog box*/
 .dial {
-    margin-left: 100px;
-    margin-right: 100px;
-    padding: 1em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
     border: 1px;
     box-shadow: 0 0 1em rgb(0 0 0 / .3);
     font-size: medium;
     justify-content: center;
-    background-color: orange;
+    background-color: #F5F5F5;
+    z-index: 1000;
 }
 
 /* General styling for all main h2 elements */
 main h2 {
     display: inline-block;
     color: white;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    background-color: black;
+    background-color: rgba(28, 28, 28, 0.8);
+    padding: 0.75rem 1.25rem;
+    margin: 1rem auto;
+    font-family: 'Cinzel', serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
 }
+
 
 /* Styling for the card img */
 .dealers-cards img {
@@ -96,40 +125,40 @@ main h2 {
 }
 
 /* Styling for the buttons */
-.go {
-    margin-right: 1rem;
+button {
+    font-size: 75%;
     height: 2rem;
     width: 4rem;
-    background-color: green;
+    font-family: 'Cinzel',
+        serif;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
 }
 
-.go:hover {
-    height: 4rem;
-    width: 6rem;
+button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.go {
+    background-color: #228B22;
 }
 
 .stay {
-    height: 2rem;
-    width: 4rem;
-    background-color: red;
-}
-
-.stay:hover {
-    height: 4rem;
-    width: 6rem;
+    background-color: #8B0000;
 }
 
 .startover {
     margin-left: 1rem;
     height: 2rem;
     width: 4rem;
-
-    background-color: orange;
-}
-
-.startover:hover {
-    height: 4rem;
-    width: 6rem;
+    background-color: #DAA520;
 }
 
 .results {
@@ -144,8 +173,13 @@ main h2 {
 
 /* footer styling */
 footer {
-    background: darkred;
+    background-color: #1C1C1C;
+    color: #fff;
+    text-align: center;
     padding: 1rem;
+    font-family: 'Cinzel',
+    serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 footer p {
@@ -153,7 +187,7 @@ footer p {
 }
 
 footer a {
-    color: black;
+    color: #fff;
     font-size: 150%;
 }
 
@@ -162,14 +196,12 @@ footer a:hover {
     font-size: 200%;
 }
 
-/* Media Query styles */
 @media screen and (min-width: 576px) {
     .dealers-cards img {
         height: 300px;
         width: 200px;
         margin: 3px;
     }
-
     .players-cards img {
         height: 300px;
         width: 200px;
@@ -177,61 +209,42 @@ footer a:hover {
     }
 }
 
-/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
-    header {
-        padding: 1rem;
-    }
-
     .dealers-cards img {
         height: 200px;
         width: 150px;
         margin: 3px;
     }
-
     .players-cards img {
         height: 200px;
         width: 150px;
         margin: 3px;
     }
-
-    main h2 {
-        font-size: 200%;
-    }
-
-    .go {
-        height: 3rem;
-        width: 5rem;
-        font-size: 150%;
-    }
-
-    footer {
-        font-size: 150%;
-    }
-
-    .stay {
-        height: 3rem;
-        width: 5rem;
-        font-size: 150%;
-    }
-
-    .startover {
-        height: 3rem;
-        width: 5rem;
-        margin-top: 2rem;
-        font-size: 130%;
-    }
 }
 
-/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-    main p {
-        margin-top: 1rem;
+
+    .dealers-cards img {
+        height: 250px;
+        width: 180px;
+        margin: 3px;
+    }
+    .players-cards img {
+        height: 250px;
+        width: 180px;
+        margin: 3px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    header {
-        font-size: 100%;
+    .dealers-cards img {
+        height: 300px;
+        width: 200px;
+        margin: 3px;
+    }
+    .players-cards img {
+        height: 300px;
+        width: 200px;
+        margin: 3px;
     }
 }
